@@ -1,0 +1,34 @@
+---
+title: "Reproducible Document"
+author: "rostools"
+format: html
+---
+
+```{r setup}
+library(tidyverse)
+```
+
+
+
+## Writing R code
+
+2+2
+
+```{r}
+2+2
+```
+
+## About Me
+
+- Asger Bech
+- Steno Diabetes Center North Denmark
+
+I conduct research within the fields of **bone health** og *diabetes*
+
+## Simple code
+
+```{r}
+3*3
+```
+
+
