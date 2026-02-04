@@ -9,7 +9,7 @@ format: html
 #| warning: false
 library(tidyverse)
 
-post_meal_data <-read_csv2(here::here("data/post-meal-insulin.csv"))
+post_meal_data <- read_csv2(here::here("data/post-meal-insulin.csv"))
 ```
 
 
@@ -19,7 +19,7 @@ post_meal_data <-read_csv2(here::here("data/post-meal-insulin.csv"))
 2+2
 
 ```{r}
-2+2
+2 + 2
 ```
 
 ## About Me
@@ -32,7 +32,7 @@ I conduct research within the fields of **bone health** og *diabetes*
 ## Simple code
 
 ```{r}
-3*3
+3 * 3
 ```
 ## Testing For Git
 I hope this works
@@ -59,7 +59,7 @@ see @fig-bmi-histo
 ```{r}
 #| fig-cap: "Glykemi"
 #| label: "fig-glykemi-histo"
-ggplot(post_meal_data, aes(x = glykemi))+
+ggplot(post_meal_data, aes(x = glykemi)) +
   geom_bar()
 ```
 See @fig-glykemi-histo for a cool plot!
@@ -72,7 +72,7 @@ ggplot(post_meal_data, aes(x = Group, fill = as.character(glykemi))) +
 ## Side by side plots
 ```{r fig-bmi-glycemia}
 #| fig-cap: "BMI and glycemia, side by side"
-#| fig-subcap: 
+#| fig-subcap:
 #|   - "Distribution of BMI."
 #|   - "Number of those with glycemia"
 #| layout-ncol: 2
@@ -83,3 +83,11 @@ ggplot(post_meal_data, aes(x = glykemi)) +
   geom_bar()
 ```
 
+## Plotting two continous variables
+```{r}
+#| fig-cap: "Scatterplot of BMI and the area under the curve for glucose"
+#| label: "fig-bmi-auc-pg"
+ggplot(post_meal_data, aes(x = BMI, y = auc_pg)) +
+  geom_point() +
+  geom_smooth()
+```
