@@ -193,3 +193,18 @@ tidier_post_meal_data |>
     Group = if_else(Group == "CTR", "Control", "First-degree relative")
   )
 ```
+
+## Mutate exercise task 1
+```{r}
+post_meal_data |>
+  filter(BMI >= 25 & BMI <= 40 & Group == "FDR")
+```
+
+## Mutate exercise task 2
+```{r}
+post_meal_data |>
+  mutate(
+    percent_body_fat = (Fat.mass.DXA / Weight) * 100
+  ) |>
+  filter(percent_body_fat > 30)
+```
